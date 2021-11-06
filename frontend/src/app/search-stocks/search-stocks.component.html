@@ -1,0 +1,15 @@
+<div class="display">
+    <div class="search">
+        <input class ="input" type="text" #input (keyup)=getstocks(input.value)>
+        <div class="date">
+            <input #fromdate class ="fromdate" type="date">
+            <input #todate class ="todate" type="date">
+        </div>
+       
+    </div>
+    <div class="resultarea">
+        <ul>
+            <li *ngFor="let stocks of searchResult " (click) = "getdata(stocks.code,fromdate.value,todate.value)"> {{stocks.name}} </li>
+        </ul>
+    </div>
+</div>

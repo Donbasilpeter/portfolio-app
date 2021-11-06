@@ -1,0 +1,49 @@
+.display{
+    position: absolute;
+    background-color: #000000;
+    width: 30%;
+    height: 100%;
+    .search{
+        margin-top:2em ;
+        position: relative;
+        text-align: center;
+        .input{
+            left: 25%;
+            right: 25%;
+            height: 2em;
+            width: 50%;
+        }
+        .date{
+            margin-top: 2em;
+             width:100%;
+             .fromdate{
+                 margin-right: 2em;
+             }
+        }
+        
+    }
+    .resultarea{
+        margin-top: 2em;
+        height: 37.8em;
+        position: relative;
+        background-color: #3D0000;
+        overflow: auto;
+        ul{ width:100%;
+            padding: 0%;
+            list-style: none;
+            li{ 
+                color: white; 
+                padding-top: .7em;
+                padding-bottom:.7em;
+                text-align: center;
+                background-color: #950101;
+                margin-top: 4px;
+                margin-bottom: 4px;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+        }
+    }
+    
+
+}
