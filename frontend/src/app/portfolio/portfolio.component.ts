@@ -23,11 +23,11 @@ export class PortfolioComponent implements OnInit {
       this.allstocks.forEach((element:any = 0, index:any =0) => {
         this.temp = this.temp + (element.pricedata[eachprice]).price * this.quantity[index];
       });
-      this.result.push(this.temp)
+      this.result.push({ month:this.allstocks[0].pricedata[eachprice].date.slice(5, 16) , price: this.temp })
       this.temp = 0;
     }
    
-    console.log(this.result)
+    
     
 
   }
@@ -39,7 +39,7 @@ export class PortfolioComponent implements OnInit {
      
     });
  
-    console.log(this.totalamount)
+    
   }
 
 }
