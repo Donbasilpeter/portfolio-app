@@ -1,0 +1,63 @@
+.portfolio{
+    position:absolute;
+    margin-left:30% ;
+    width:70%;
+    height:40%;
+    background-color: #51050F;
+    display: flex;
+    .custom{
+        background-color: blue;
+        width: 70%;
+        height: 100%;
+        
+    .list{
+        height: 100%;
+        position: relative;
+        background-color: #1F1D36;
+        overflow: auto;
+        
+        ul{ width:90%;
+            margin-top: 2%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0%;
+            list-style: none;
+            li{ 
+                position: relative;
+                height: 20px;
+                padding-top: 3%;
+                padding-bottom: 5%;
+                margin-top: 1%;
+                margin-bottom: 1%;
+                width :100%;
+                background-color: #3F3351;
+                border-radius: 5px;
+                span{
+                    padding-top: 1%;
+                    left:10px;
+                    height: 30px;
+                    position: absolute;
+                    color:white;
+                    
+                }
+                input{
+    
+                    height: 30px;
+                    position: absolute;
+                    left:40%;
+                    width:10%;
+
+
+                }
+            }
+
+          
+        }
+    }
+    }
+    .result{
+        background-color: rgb(144, 194, 51);
+        width: 30%;
+        height: 100%;
+    }
+}

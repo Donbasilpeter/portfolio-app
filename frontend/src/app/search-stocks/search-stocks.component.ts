@@ -2,13 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { RequestService } from '../request.service';
 
 
+
 @Component({
   selector: 'app-search-stocks',
   templateUrl: './search-stocks.component.html',
   styleUrls: ['./search-stocks.component.scss']
 })
 export class SearchStocksComponent implements OnInit {
+  temparray:any = []
   searchResult:any = ""
+  allstocks:any = []
 
   constructor(private request: RequestService) { }
 
@@ -27,7 +30,9 @@ export class SearchStocksComponent implements OnInit {
     todate = todate.slice(0, 4) + todate.slice(5, 7) + todate.slice(8, 10);
     fromdate = fromdate.slice(0, 4) + fromdate.slice(5, 7) + fromdate.slice(8, 10);;
     this.request.getdata(input,fromdate,todate).subscribe(data =>{
-      console.log(data)
+     this.temparray.push(data)
+     this.allstocks = this.temparray
+      console.log(this.allstocks)
     })
     
 

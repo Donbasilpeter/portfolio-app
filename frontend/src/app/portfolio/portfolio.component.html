@@ -1,1 +1,13 @@
-<p>portfolio works!</p>
+<div class="portfolio">
+    <div class="custom">
+        <div class="list" #input>
+            <ul  >
+                <li  *ngFor="let stocks of allstocks; let i = index "><span>{{stocks.name}}</span> <input  type="number" min ="0" > </li>
+            </ul>
+            <button (click) = "quantityload(input)">submit</button>
+        </div>
+    </div>
+    <div class="result">
+        hellllloooooo
+    </div>
+</div>
