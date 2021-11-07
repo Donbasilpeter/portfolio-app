@@ -14,9 +14,10 @@ export class SearchStocksComponent implements OnInit {
   searchResult:any = ""
   allstocks:any = []
   quantity:any = []
+  do:boolean = true;
 
   constructor(private request: RequestService) { }
-
+  
   ngOnInit(): void {
     this.getstocks("")
   }
@@ -32,13 +33,23 @@ export class SearchStocksComponent implements OnInit {
     todate = todate.slice(0, 4) + todate.slice(5, 7) + todate.slice(8, 10);
     fromdate = fromdate.slice(0, 4) + fromdate.slice(5, 7) + fromdate.slice(8, 10);;
     this.request.getdata(input,fromdate,todate).subscribe(data =>{
-     this.temparray.push(data)
-     this.tempquant.push(0)
-     this.allstocks = this.temparray
-      this.quantity = this.tempquant
+      this.allstocks.forEach( (element:any) => {
+        if(data.script_code == element.script_code){
+          this.do = false;
+        }
+    });
+    if(this.do){
+      this.temparray.push(data);
+      this.tempquant.push(0);
+      this.allstocks = this.temparray;
+       this.quantity = this.tempquant;    
+    }
+    this.do = true;   
+ 
     })
     
 
   }
+
 
 }

@@ -41,7 +41,12 @@ def getdata():
             if i < length-1:
                 i=i+1
         else:
-            pricedate.append({"date": start_date, "price" : "" ,"type":False})
+            if i== 0:
+                pricedate.append({"date": start_date, "price" :  responsedata[i]['vale1'] ,"type":False})
+            else:
+                pricedate.append({"date": start_date, "price" :  responsedata[i-1]['vale1'] ,"type":False})
+
+
         start_date += delta
     pricedate = {"script_code" : script_code, "name" : name, "pricedata" :pricedate}
     return pricedate

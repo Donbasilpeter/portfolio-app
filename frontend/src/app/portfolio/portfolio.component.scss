@@ -6,20 +6,22 @@
     background-color: #51050F;
     display: flex;
     .custom{
-        background-color: blue;
+        position: relative;
+        background-color: #1F1D36;
         width: 70%;
         height: 100%;
         
     .list{
-        height: 100%;
+        height: 80%;
         position: relative;
-        background-color: #1F1D36;
         overflow: auto;
+        margin-bottom: 2%;
         
         ul{ width:90%;
-            margin-top: 2%;
+            margin-top: 5%;
             margin-left: auto;
             margin-right: auto;
+           
             padding: 0%;
             list-style: none;
             li{ 
@@ -32,12 +34,13 @@
                 width :100%;
                 background-color: #3F3351;
                 border-radius: 5px;
-                span{
+                .stockname{
                     padding-top: 1%;
                     left:10px;
                     height: 30px;
                     position: absolute;
                     color:white;
+                    font-size: small;
                     
                 }
                 input{
@@ -46,13 +49,41 @@
                     position: absolute;
                     left:40%;
                     width:10%;
-
-
+                }
+                .remove{
+                    color: white;
+                    border-radius: 5px;
+                    background-color: red;
+                    top: 30%;
+                    position: absolute;
+                    right:2%
+                }
+                .percentage{
+                    padding-top: 1%;
+                    right:30%;
+                    height: 30px;
+                    position: absolute;
+                    color:white;
+                    
                 }
             }
 
           
         }
+       
+    }
+    .submit{
+        cursor: pointer;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 15px;
+        left:45%;
+        background-color: #483434;
+        width: 20%;
+        color: white;
+        height: 10%;
+        padding-top: 2%;
+        text-align: center;
     }
     }
     .result{
