@@ -1,4 +1,5 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { ThrowStmt } from '@angular/compiler';
+import { Component, OnInit,Input,Output,EventEmitter  } from '@angular/core';
 
 @Component({
   selector: 'app-portfolio',
@@ -11,10 +12,12 @@ export class PortfolioComponent implements OnInit {
    result : any =[];
    temp:any = 0;
   @Input() currentstocks:any;
+  @Output() currentstocksChange = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
   quantityload(){
     this.result = []
@@ -35,6 +38,10 @@ export class PortfolioComponent implements OnInit {
     });
  
     
+  }
+  remove(i:number){
+    this.currentstocks.splice(i, 1);
+    this.currentstocksChange.emit(this.currentstocks)
   }
 
 }

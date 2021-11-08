@@ -1,6 +1,6 @@
 <div class="portfolio">
     <div class="custom">
-        <div class="list" *ngIf="currentstocks.length > 1; else select  ">
+        <div class="list" *ngIf="currentstocks.length > 0; else select  ">
             <ul>
                 <li *ngFor="let stocks of currentstocks; let i = index ">
                     <span class="stockname">{{stocks.name}} &nbsp;&nbsp;₹{{stocks.pricedata[0].price}}</span>
@@ -12,7 +12,7 @@
                         *100/totalamount).toFixed(2)}}%
 
                     </span>
-                    <button class="remove"> remove</button>
+                    <button class="remove" (click) = "remove(i);onChange();quantityload()" > remove</button>
                 </li>
             </ul>
         </div>
