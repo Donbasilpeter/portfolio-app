@@ -1,23 +1,28 @@
 <div class="portfolio">
     <div class="custom">
-        <div class="list" #input>
+        <div class="list" *ngIf="currentstocks.length > 1; else select  ">
             <ul>
-                <li *ngFor="let stocks of allstocks; let i = index ">
-                    <span class = "stockname">{{stocks.name}} &nbsp;&nbsp;₹{{stocks.pricedata[0].price}}</span>
-                    <input  value="0" type="number" min="0" [(ngModel)]="quantity[i]"  (change)="onChange()">
+                <li *ngFor="let stocks of currentstocks; let i = index ">
+                    <span class="stockname">{{stocks.name}} &nbsp;&nbsp;₹{{stocks.pricedata[0].price}}</span>
+                    <input value="0" type="number" min="0" [(ngModel)]="quantity[i]"
+                        (change)="onChange();quantityload()">
                     <span class="percentage">
-              
-                        {{totalamount == 0 ? 0 :((stocks.pricedata[0]).price * quantity[i] *100/totalamount).toFixed(2)}}%
+
+                        {{totalamount == 0 ? 0 :((stocks.pricedata[0]).price * quantity[i]
+                        *100/totalamount).toFixed(2)}}%
 
                     </span>
                     <button class="remove"> remove</button>
                 </li>
             </ul>
         </div>
-        <div class = "submit" (click)="quantityload()">submit</div>
+        <ng-template #select> <div class="select">  Select Some Stocks to create your portfolio</div>   </ng-template>
+        
+
     </div>
+    
     <div class="result">
-        <!-- {{quantity|json}}{{allstocks|json}} -->
+        <!-- {{quantity|json}}{{currentstocks|json}} -->
     </div>
 </div>
-<app-graph [result] = "result"></app-graph>
+<app-graph [result]="result"></app-graph>

@@ -11,11 +11,13 @@
         width: 70%;
         height: 100%;
         
+
+        
     .list{
-        height: 80%;
+        height: 95%;
         position: relative;
         overflow: auto;
-        margin-bottom: 2%;
+        
         
         ul{ width:90%;
             margin-top: 5%;
@@ -72,19 +74,18 @@
         }
        
     }
-    .submit{
-        cursor: pointer;
-        border-radius: 5px;
-        position: absolute;
-        bottom: 15px;
-        left:45%;
-        background-color: #483434;
-        width: 20%;
-        color: white;
-        height: 10%;
-        padding-top: 2%;
+    .select{
+        margin-right: 40%;
+        margin-left: 40%;
+        margin-top: 10%;
         text-align: center;
+        color:white;
+        font-size: x-large;
+        font-weight: 700;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
+    
+    
     }
     .result{
         background-color: rgb(144, 194, 51);

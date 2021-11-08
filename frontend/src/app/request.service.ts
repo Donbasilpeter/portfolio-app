@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http';
 export class RequestService {
 
   constructor(private http: HttpClient) { }
-  getstocks(input:string){
-    return this.http.post<any>('http://127.0.0.1:5000/getcode', { name: input })
+  getstocks(){
+    return this.http.get<any>('http://127.0.0.1:5000/getcode')
  
   }
   getdata(code:string,fromdate:string,todate:string){

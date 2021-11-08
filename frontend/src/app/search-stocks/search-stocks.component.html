@@ -2,8 +2,8 @@
     <div class="search">
         <input class ="input" type="text" #input (keyup)=getstocks(input.value)>
         <div class="date">
-            <input #fromdate class ="fromdate" type="date" value ="2021-03-01" >
-            <input #todate class ="todate" type="date" value ="2021-03-05">
+            <input #fromdate class ="fromdate" type="date" value ="2021-03-01" (change) = "reset(fromdate.value,todate.value)" >
+            <input #todate class ="todate" type="date" value ="2021-03-05" (change) = "reset(fromdate.value,todate.value)" >
         </div>
        
     </div>
@@ -14,4 +14,4 @@
     </div>
 </div>
 
-<app-portfolio [allstocks] = "allstocks" [quantity] = "quantity"></app-portfolio>
+<app-portfolio [currentstocks] = "currentstocks" [quantity] = "quantity"></app-portfolio>
