@@ -8,6 +8,7 @@ import { Component, OnInit,Input,Output,EventEmitter  } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
   @Input() quantity:any = [];
+  @Output() quantityChange = new EventEmitter<any>();
    totalamount:number = 0;
    result : any =[];
    temp:any = 0;
@@ -42,6 +43,8 @@ export class PortfolioComponent implements OnInit {
   remove(i:number){
     this.currentstocks.splice(i, 1);
     this.currentstocksChange.emit(this.currentstocks)
+    this.quantity.splice(i, 1);
+    this.quantityChange.emit(this.quantity)
   }
 
 }

@@ -41,23 +41,28 @@ export class SearchStocksComponent implements OnInit {
     
   }
 
-  getdata(input:string,fromdate:string,todate:string){
-    todate = todate.slice(0, 4) + todate.slice(5, 7) + todate.slice(8, 10);
-    fromdate = fromdate.slice(0, 4) + fromdate.slice(5, 7) + fromdate.slice(8, 10);
+
+
+getdata(input:string,fromdate:string,todate:string){
+  todate = todate.slice(0, 4) + todate.slice(5, 7) + todate.slice(8, 10);
+  fromdate = fromdate.slice(0, 4) + fromdate.slice(5, 7) + fromdate.slice(8, 10);
+  this.request.getdata(input,fromdate,todate).subscribe(data =>{
     this.currentstocks.forEach( (element:any) => {
-      if(input == element.script_code){
+      if(data.script_code == element.script_code){
         this.do = false;
       }
   });
-    if(this.do){
-      this.request.getdata(input,fromdate,todate).subscribe(data =>{
-      this.currentstocks.push(data);
-      this.quantity.push(0);  
-      });
-    }
-    this.do = true;   
-}
+  if(this.do){
+    this.currentstocks.push(data);
+    this.quantity.push(0);
+    
+  }
+  this.do = true;   
 
+  })
+  
+
+}
     
 
 
