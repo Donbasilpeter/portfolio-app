@@ -1,6 +1,6 @@
 <div class="display">
     <div class="search">
-        <input class ="input" type="text" #input (keyup)=getstocks(input.value)>
+        <input class ="input" type="text" #input (keyup)=getstocks(input.value) placeholder="             Search...">
         <div class="date">
             <input #fromdate class ="fromdate" type="date" value ="2021-03-01" (change) = "reset(fromdate.value,todate.value)" >
             <input #todate class ="todate" type="date" value ="2021-03-05" (change) = "reset(fromdate.value,todate.value)" >

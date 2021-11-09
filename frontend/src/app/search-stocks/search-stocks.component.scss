@@ -8,44 +8,75 @@
     background-color: white;
     border-radius: 10px;
     .search{
-        margin-top:2em ;
+        margin:1%;
+        border-radius: 10px;
         position: relative;
         text-align: center;
+        background-color:rgb(236, 236, 241);
+        padding-top:10%;
+        padding-bottom: 10%;
         .input{
             left: 25%;
             right: 25%;
             height: 2em;
             width: 50%;
+            border-radius: 10px;
+            border: 1px solid #0166FF;
         }
         .date{
-            margin-top: 2em;
-             width:100%;
-             .fromdate{
-                 margin-right: 2em;
-             }
+            padding-top: 5%;
+            .fromdate{
+                color: #0166FF;
+                width:40%;
+                margin-right: 10%;
+                border: 1px solid #0166FF;
+            }
+            .todate{
+                color: #0166FF;
+
+                width:40%;
+                border: 1px solid #0166FF;
+            }
         }
+       
         
     }
+    .line{
+        height: 2px;
+        width: 90%;
+       margin-right: auto;
+       margin-left: auto;
+    }
     .resultarea{
-    
-        margin-top: 2em;
-        height: 10%;
+        margin-top: 1em;
+        height: 77.5%;
         position: relative;
-        background-color: #3D0000;
+        background-color: rgb(236, 236, 241);
         overflow: auto;
-        ul{ width:100%;
+        border-radius: 10px;
+
+        ul{ 
+            margin-top: 1em;
+            width:95%;
+            margin-left: auto;
+            margin-right: auto;
             padding: 0%;
             list-style: none;
+            
             li{ 
-                color: white; 
+                color: #0166FF; 
                 padding-top: .7em;
                 padding-bottom:.7em;
                 text-align: center;
-                background-color: #950101;
+                background-color: white;
                 margin-top: 4px;
                 margin-bottom: 4px;
                 cursor: pointer;
                 border-radius: 10px;
+            }
+            li:hover{
+                color: white;
+                background-color: #0166FF;
             }
         }
     }
