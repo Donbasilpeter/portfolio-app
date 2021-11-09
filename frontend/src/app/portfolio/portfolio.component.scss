@@ -2,14 +2,15 @@
     position:absolute;
     margin-left:30% ;
     width:70%;
-    height:40%;
-    background-color: #51050F;
+    height:38.5%;
     display: flex;
     .custom{
+        margin:10px;
         position: relative;
-        background-color: #1F1D36;
+        background-color: white;
         width: 70%;
         height: 100%;
+        border-radius: 10px;
         
 
         
@@ -34,7 +35,7 @@
                 margin-top: 1%;
                 margin-bottom: 1%;
                 width :100%;
-                background-color: #3F3351;
+                background-color: #0166FF;
                 border-radius: 5px;
                 .stockname{
                     padding-top: 1%;
@@ -79,7 +80,7 @@
         margin-left: 40%;
         margin-top: 10%;
         text-align: center;
-        color:white;
+        color:#0166FF;
         font-size: x-large;
         font-weight: 700;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -88,8 +89,10 @@
     
     }
     .result{
-        background-color: rgb(144, 194, 51);
+        background-color: white;
         width: 30%;
         height: 100%;
+        margin: 10px 10px 10px 0px;
+        border-radius: 10px;
     }
 }
