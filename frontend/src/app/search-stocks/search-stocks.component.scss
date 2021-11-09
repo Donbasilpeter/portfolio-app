@@ -2,10 +2,10 @@
 .display{
     position: absolute;
     background-color: #000000;
-    width: 30%;
-    height: 99%;
-    z-index: 1;
-    margin:.5%;
+    width: 29%;
+    height: 98%;
+    margin: .5%;
+    background-color: white;
     border-radius: 10px;
     .search{
         margin-top:2em ;
@@ -29,7 +29,7 @@
     .resultarea{
     
         margin-top: 2em;
-        height: 37.8em;
+        height: 10%;
         position: relative;
         background-color: #3D0000;
         overflow: auto;
