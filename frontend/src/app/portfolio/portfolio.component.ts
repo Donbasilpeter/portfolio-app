@@ -14,6 +14,11 @@ export class PortfolioComponent implements OnInit {
   @Input() currentstocks:any;
   @Output() currentstocksChange = new EventEmitter<any>();
   displayall:boolean =false;
+  dailychange:any = []
+  mean:number = 0;
+  deviation:number = 0;
+  finalindex :number =0;
+
 
 
   constructor() { }
@@ -38,7 +43,7 @@ export class PortfolioComponent implements OnInit {
     });
     if(execute){
       
-    if(!(arraysum-100 >0.5 || arraysum-100 <0.5) ){
+    if(!(arraysum >99.5 && arraysum <100.5) ){
       alert("Sum of quantity of all stocks must be 100. You have a difference of " + (arraysum -100) + "%");
     }
     else{
@@ -51,6 +56,8 @@ export class PortfolioComponent implements OnInit {
       this.temp = 0;
       
     }
+    this.finalindex = this.result[this.result.length -1].portfolio
+    this.setdailychange()
     if(this.displayall){
 
 
@@ -98,6 +105,24 @@ export class PortfolioComponent implements OnInit {
       });
     });
     this.result = resultcopy
-    console.log(this.result)
   }
+  setdailychange(){
+    this.dailychange =[]
+    for(let Index = 1; Index<this.result.length; Index++){
+     this.dailychange.push((this.result[Index].portfolio*100/this.result[Index-1].portfolio) -100) 
+    }
+    let sum = 0;
+    for(let Index = 0; Index<this.dailychange.length; Index++){
+    sum = sum + this.dailychange[Index]
+  }
+  this.mean =  sum/this.dailychange.length;
+  sum = 0;
+  for(let Index = 0; Index<this.dailychange.length; Index++){
+    sum = sum + Math.pow((this.dailychange[Index]-this.mean),2) 
+  }
+  sum = sum/this.dailychange.length;
+  this.deviation = Math.sqrt(sum);
+  
+
+}
 }
