@@ -1,29 +1,30 @@
 <div class="portfolio">
     <div class="custom">
-        <div class="optionbar" *ngIf="currentstocks.length > 0;" ></div>
+        <div class="optionbar" *ngIf="currentstocks.length > 0;"> <label class="switch">
+                <input type="checkbox" (change)="displayall = !displayall">
+                <span class="slider round"></span>
+            </label>
+            <div class="submit" (click)="quantityload()">submit</div>
+        </div>
         <div class="list" *ngIf="currentstocks.length > 0; else select  ">
             <ul>
                 <li *ngFor="let stocks of currentstocks; let i = index ">
-                    <span class="stockname">{{stocks.name}} &nbsp;&nbsp;₹{{stocks.pricedata[0].price}}</span>
-                    <input value="0" type="number" min="0" [(ngModel)]="quantity[i]"
-                        (change)="onChange();quantityload()">
-                    <span class="percentage">
-
-                        {{totalamount == 0 ? 0 :((stocks.pricedata[0]).price * quantity[i]
-                        *100/totalamount).toFixed(2)}}%
-
-                    </span>
-                    <div class="remove" (click) = "remove(i);onChange();quantityload()" > Remove</div>
+                    <span class="stockname">{{stocks.name}} &nbsp;&nbsp;₹{{stocks.startprice}}</span>
+                    <input value="0" type="number" min="0" max="100" [(ngModel)]="quantity[i]"
+                        (change)="onchange(i)"><span class="percentage">%</span>
+                    <div class="remove" (click)="remove(i);"> Remove</div>
                 </li>
             </ul>
         </div>
-        <ng-template #select> <div class="select">  Select Some Stocks to create your portfolio</div>   </ng-template>
-        
+        <ng-template #select>
+            <div class="select"> Select Some Stocks to create your portfolio</div>
+        </ng-template>
+
 
     </div>
-    
+
     <div class="result">
-        
+
     </div>
 </div>
 <app-graph [result]="result"></app-graph>
