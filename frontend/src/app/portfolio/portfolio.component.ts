@@ -28,7 +28,9 @@ export class PortfolioComponent implements OnInit {
       });
       this.result.push({ month:this.currentstocks[0].pricedata[eachprice].date.slice(5, 16) , price: this.temp })
       this.temp = 0;
+      
     }
+    console.log(this.currentstocks,this.result);
   }
   
   onChange(){
