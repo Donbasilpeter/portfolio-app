@@ -52,16 +52,11 @@ def getdata():
     return pricedate
 
 
-@app.route('/getcode', methods = ['POST'])
+@app.route('/getcode', methods = ['GET'])
 def getcode():
-    response = []
     f = open('data.json',)
-    index = json.load(f)
-    incoming = request.json
-    for value in index:
-        if incoming["name"].lower() in value["name"].lower() :
-            response.append(value)
-    response = { "data" : response}
+    bsecode = json.load(f)
+    response = { "data" : bsecode}
     return response
 
 

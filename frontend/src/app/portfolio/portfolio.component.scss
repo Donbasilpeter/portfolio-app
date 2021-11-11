@@ -1,24 +1,111 @@
+@import "../../styles.scss";
+
 .portfolio{
     position:absolute;
     margin-left:30% ;
     width:70%;
-    height:40%;
-    background-color: #51050F;
+    height:38.5%;
     display: flex;
     .custom{
+        margin:10px;
         position: relative;
-        background-color: #1F1D36;
+        background-color: white;
         width: 70%;
         height: 100%;
+        border-radius: 10px;
         
+
+    .optionbar{
+        top:10px;
+        position: relative;
+        height: 45px;
+        padding-top: 3%;
+        padding-bottom: 5%;
+        width :97%;
+        background-color: $secondary;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+
+        .submit{
+            background: rgb(5, 145, 5);
+            display: inline-block;
+            margin-left: 70%;
+            cursor: pointer;
+            border-radius: 10px;
+            padding: 1%;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            
+          }
+          
+          .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+          }
+          
+          .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+          }
+          
+          .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+          }
+          
+          input:checked + .slider {
+            background-color: #2196F3;
+          }
+          
+          input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+          }
+          
+          input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+          }
+          
+          /* Rounded sliders */
+          .slider.round {
+            border-radius: 34px;
+          }
+          
+          .slider.round:before {
+            border-radius: 50%;
+          }
+        
+    }
     .list{
-        height: 80%;
+        margin-top: 10px;
+        top:10px;
+        height: 73%;
         position: relative;
         overflow: auto;
-        margin-bottom: 2%;
+        
         
         ul{ width:90%;
-            margin-top: 5%;
             margin-left: auto;
             margin-right: auto;
            
@@ -26,14 +113,14 @@
             list-style: none;
             li{ 
                 position: relative;
-                height: 20px;
+                height: 65px;
                 padding-top: 3%;
                 padding-bottom: 5%;
                 margin-top: 1%;
                 margin-bottom: 1%;
                 width :100%;
-                background-color: #3F3351;
-                border-radius: 5px;
+                background-color: $primary;
+                border-radius: 10px;
                 .stockname{
                     padding-top: 1%;
                     left:10px;
@@ -47,23 +134,26 @@
     
                     height: 30px;
                     position: absolute;
-                    left:40%;
-                    width:10%;
+                    left:45%;
+                    width:15%;
                 }
                 .remove{
+                    border: 0%;
+                    padding: 5px;
                     color: white;
-                    border-radius: 5px;
-                    background-color: red;
-                    top: 30%;
+                    border-radius: 10px;
+                    background-color: $red;
+                    top: 25%;
                     position: absolute;
-                    right:2%
+                    right:2%;
+                    cursor: pointer;
                 }
                 .percentage{
                     padding-top: 1%;
-                    right:30%;
+                    right:35%;
                     height: 30px;
                     position: absolute;
-                    color:white;
+                    color:$white;
                     
                 }
             }
@@ -72,23 +162,25 @@
         }
        
     }
-    .submit{
-        cursor: pointer;
-        border-radius: 5px;
-        position: absolute;
-        bottom: 15px;
-        left:45%;
-        background-color: #483434;
-        width: 20%;
-        color: white;
-        height: 10%;
-        padding-top: 2%;
-        text-align: center;
+  
+    
+    
     }
+    .select{
+        margin-right: 40%;
+        margin-left: 40%;
+        margin-top: 10%;
+        text-align: center;
+        color:#0166FF;
+        font-size: x-large;
+        font-weight: 700;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     .result{
-        background-color: rgb(144, 194, 51);
+        background-color: white;
         width: 30%;
         height: 100%;
+        margin: 10px 10px 10px 0px;
+        border-radius: 10px;
     }
 }
