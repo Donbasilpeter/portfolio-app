@@ -1,12 +1,19 @@
 .fullscreen {
     display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
     grid-template-rows: 1fr 1fr 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
-      "display portfolio portfolio"
-      "display portfolio portfolio"
-      "display portfolio portfolio"; 
+      "display portfolio portfolio portfolio"
+      "display portfolio portfolio portfolio"
+      "display portfolio portfolio portfolio"; 
+      .display {
+           grid-area: display; 
+           height: 100vh;
+           overflow: auto;
+        }
+      .portfolio { 
+          grid-area: portfolio;
+        height: 100vh;
+        overflow: auto; }
   }
-  .display { grid-area: display; }
-  .portfolio { grid-area: portfolio; }

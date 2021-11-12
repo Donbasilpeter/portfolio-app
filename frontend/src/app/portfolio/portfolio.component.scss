@@ -7,6 +7,11 @@
       "graph graph graph"
       "graph graph graph"
       "stockarea stockarea stockarea"; 
+      .graph { grid-area: graph; 
+
+    }
+      .stockarea { grid-area: stockarea; 
+        height:calc(100vh/3);
+       overflow: auto;}
+      
   }
-  .graph { grid-area: graph; }
-  .stockarea { grid-area: stockarea; }
