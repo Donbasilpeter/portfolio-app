@@ -1,17 +1,21 @@
-<div class="display">
-    <div class="search">
-        <input class ="input" type="text" #input (keyup)=getstocks(input.value) placeholder="             Search...">
-        <div class="date">
-            <input #fromdate class ="fromdate" type="date" value ="2020-03-01" (change) = "reset(fromdate.value,todate.value)" >
-            <input #todate class ="todate" type="date" value ="2021-03-05" (change) = "reset(fromdate.value,todate.value)" >
+<div class="fullscreen">
+    <div class="display">
+        <div class="search">
+            <input class ="input" type="text" #input (keyup)=getstocks(input.value) placeholder="             Search...">
+            <div class="date">
+                <input #fromdate class ="fromdate" type="date" value ="2020-03-01" (change) = "reset(fromdate.value,todate.value)" >
+                <input #todate class ="todate" type="date" value ="2021-03-05" (change) = "reset(fromdate.value,todate.value)" >
+            </div>
+           
         </div>
-       
+        <div class="resultarea">
+            <ul>
+                <li *ngFor="let stocks of searchResult " (click) = "getdata(stocks.code,fromdate.value,todate.value)"> {{stocks.name}} </li>
+            </ul>
+        </div>
     </div>
-    <div class="resultarea">
-        <ul>
-            <li *ngFor="let stocks of searchResult " (click) = "getdata(stocks.code,fromdate.value,todate.value)"> {{stocks.name}} </li>
-        </ul>
-    </div>
+<app-portfolio class = "portfolio" [currentstocks] = "currentstocks" [quantity] = "quantity"></app-portfolio>
+
 </div>
 
-<app-portfolio [currentstocks] = "currentstocks" [quantity] = "quantity"></app-portfolio>
+
