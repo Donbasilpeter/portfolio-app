@@ -4,6 +4,7 @@ import requests
 import json
 import datetime
 
+#myapi ide for alphavantage SM1TGBEER868W5CT
 
 
 app = Flask(__name__)
