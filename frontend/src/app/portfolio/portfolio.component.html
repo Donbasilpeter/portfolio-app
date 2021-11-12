@@ -1,12 +1,29 @@
 <div class="rightside">
     <app-graph class="graph" [result]="result"></app-graph>
     <div class="stockarea">
+        <!-- Result -->
+        <div class="result">
+            <div class="mean result_card">
+                2.11876532653275332<!-- {{mean}} -->
+            </div>
+            <div class="deviation result_card">
+                2.11876532653275332<!-- {{deviation}} -->
+            </div>
+            <div class="finalindex result_card">
+                2.11876532653275332<!-- {{finalindex}} -->
+            </div>
+            <div class="cagr result_card">
+                2.11876532653275332<!-- {{finalindex}} -->
+            </div>
+        </div>
+
+        <!-- action -->
         <div class="custom">
             <div class="optionbar" *ngIf="currentstocks.length > 0;"> <label class="switch">
                     <input type="checkbox" (change)="displayall = !displayall">
                     <span class="slider round"></span>
                 </label>
-                <div class="submit" (click)="quantityload()">submit</div>
+                <button class="submit" (click)="quantityload()">submit</button>
             </div>
             <div class="list" *ngIf="currentstocks.length > 0; else select  ">
                 <ul>
@@ -21,13 +38,8 @@
             <ng-template #select>
                 <div class="select"> Select Some Stocks to create your portfolio</div>
             </ng-template>
-
-
         </div>
 
-        <div class="result">
-            {{mean}} {{deviation}} {{finalindex}}
-        </div>
     </div>
 
 

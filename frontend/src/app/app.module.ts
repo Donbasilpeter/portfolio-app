@@ -6,13 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchStocksComponent } from './search-stocks/search-stocks.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GraphComponent } from './graph/graph.component';
 import { 
 	IgxCategoryChartModule,
 	IgxLegendModule
  } from "igniteui-angular-charts";
+ import {MatDatepickerModule} from '@angular/material/datepicker';
+ import { MatInputModule } from '@angular/material/input';
+ import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 
+import { DatePipe } from '@angular/common';
+import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,12 +31,23 @@ import {
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
     IgxCategoryChartModule,
-	  IgxLegendModule
+	  IgxLegendModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
   ],
-  providers: [],
+  providers: [  
+    MatDatepickerModule, 
+    DatePipe 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

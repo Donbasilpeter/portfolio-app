@@ -1,21 +1,46 @@
 <div class="fullscreen">
-    <div class="display">
-        <div class="search">
-            <input class ="input" type="text" #input (keyup)=getstocks(input.value) placeholder="             Search...">
+  <!-- Search componenet -->
+  <div class="display">
+    <!-- <div class="search">
+            <input class ="input" type="text" #input (keyup)=getstocks(input.value) placeholder="Search...">
             <div class="date">
                 <input #fromdate class ="fromdate" type="date" value ="2020-03-01" (change) = "reset(fromdate.value,todate.value)" >
                 <input #todate class ="todate" type="date" value ="2021-03-05" (change) = "reset(fromdate.value,todate.value)" >
             </div>
-           
-        </div>
-        <div class="resultarea">
+        </div> -->
+    <mat-form-field appearance="fill">
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+        <input matStartDate formControlName="start" placeholder="Start date">
+        <input matEndDate formControlName="end" placeholder="End date">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+
+      <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+      <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+    </mat-form-field>
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Search Stock</mat-label>
+        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+          [matAutocomplete]="auto">
+        <mat-autocomplete (optionSelected)='onSelectedStock($event.option.value)' autoActiveFirstOption
+          #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let option of filteredOptions | async; let i=index;trackBy: trackByFn;"
+            [value]="option.name">
+            {{option?.name}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+    <!-- <div class="resultarea">
             <ul>
                 <li *ngFor="let stocks of searchResult " (click) = "getdata(stocks.code,fromdate.value,todate.value)"> {{stocks.name}} </li>
             </ul>
-        </div>
-    </div>
-<app-portfolio class = "portfolio" [currentstocks] = "currentstocks" [quantity] = "quantity"></app-portfolio>
-
+        </div> -->
+  </div>
+  <!-- app portfolio component -->
+  <app-portfolio class="portfolio" [currentstocks]="currentstocks" [quantity]="quantity"></app-portfolio>
 </div>
-
-

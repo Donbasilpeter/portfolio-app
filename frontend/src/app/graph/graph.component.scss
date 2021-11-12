@@ -1,9 +1,8 @@
-$margin : 10px;
+@import "../../styles.scss";
 .graph{
     width: 100%;
     height: 100%;
-    border-radius: 10px;
     background-color: white;
     display: flex;
-    
+    height: 100vh;
 }
