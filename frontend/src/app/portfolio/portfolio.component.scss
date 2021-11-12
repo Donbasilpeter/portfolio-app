@@ -1,3 +1,4 @@
+$margin : 10px;
 .rightside {
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr; 
@@ -8,10 +9,12 @@
       "graph graph graph"
       "stockarea stockarea stockarea"; 
       .graph { grid-area: graph; 
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
     }
-      .stockarea { grid-area: stockarea; 
-        height:calc(100vh/3);
+      .stockarea { grid-area: stockarea;
+        margin:10px; 
+        height:calc(100vh/3 ) ;
        overflow: auto;}
       
   }
